@@ -1,0 +1,39 @@
+<div xmlns:th="http://www.thymeleaf.org">
+	<div class="container-fluid">
+	    <div class="collapse navbar-collapse" id="navbarNav">
+	      <ul class="navbar-nav">
+	        <li class="nav-item">
+	          <a class="nav-link active"  th:href="@{/product/page}">Home</a>
+	        </li>
+	        <th:block th:if="${#request.remoteUser}">
+		        <li class="nav-item">
+		          <a class="nav-link" th:href="@{/security/logoff}">Sign Out</a>
+		        </li>
+	        	 <li class="nav-item">
+		          <a class="nav-link" th:href="@{/order/list}">Your Orders</a>
+		        </li>
+		         <li class="nav-item" 
+		         	th:if="${#request.isUserInRole('DIRE')
+		         	or #request.isUserInRole('STAF')
+		         	or #request.isUserInRole('ADMIN')}">
+	          		<a class="nav-link" th:href="@{/admin/home/index}">Administration</a>
+	        	</li>
+	        </th:block>
+	        <th:block th:unless="${#request.remoteUser}">
+		         <li class="nav-item">
+		          <a class="nav-link" th:href="@{/account/register}">Register</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" th:href="@{/security/login/form}">Sign In</a>
+		        </li>
+	        </th:block>
+
+
+	      </ul>
+	      <ul class="nav navbar-nav" th:if="${#request.remoteUser}">
+	      	<li class="nav-item"><a href="#">Welcome [[${#request.remoteUser}]]</a></li>
+	      </ul>
+	    </div>
+	  </div>
+</div>
+  
