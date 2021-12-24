@@ -13,8 +13,8 @@ app.controller("gallery-ctrl", function($scope, $http){
 	$scope.list();
 	
 	$scope.delete = function(filename){
-		$http.delete("/rest/upload/images/${filename}").then(resp => {
-			var i = $scope.filenames.findIndex(name => name == filename);
+		$http.delete(`/rest/upload/images/${filename}`).then(resp => {
+			let i = $scope.filenames.findIndex(name => name == filename);
 			$scope.filenames.splice(i, 1);
 			alert("Xóa ảnh thành công !");
 		}).catch(error => {
