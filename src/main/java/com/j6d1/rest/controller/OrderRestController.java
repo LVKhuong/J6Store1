@@ -21,8 +21,6 @@ public class OrderRestController {
 	
 	@PostMapping("")
 	public Order create(@RequestBody JsonNode orderData) {
-		
-		
 		return orderService.create(orderData);
 	}
 	

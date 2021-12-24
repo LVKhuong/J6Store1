@@ -34,8 +34,10 @@ public class OrderServiceImpl implements OrderService{
 		save(order);
 		
 		TypeReference<List<OrderDetail>> type = new TypeReference<List<OrderDetail>>() {};
+		
 		List<OrderDetail> details = mapper.convertValue(orderData.get("orderDetails"), type)
 				.stream()
+				// Thêm order vào orderDetails
 				.peek(d -> d.setOrder(order))
 				.collect(Collectors.toList());
 		

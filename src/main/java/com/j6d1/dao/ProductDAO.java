@@ -9,7 +9,17 @@ import com.j6d1.entity.Product;
 
 public interface ProductDAO extends JpaRepository<Product, Integer>{
 
-	@Query("SELECT p FROM Product p WHERE p.category.id=?1")
+	@Query("SELECT p FROM Product p WHERE p.category.id = ?1")
 	Page<Product> findByCategoryId(Integer cid, Pageable pageable);
+	
+	@Query("SELECT p FROM Product p WHERE p.name LIKE ?1")
+	Page<Product> serachProduct(String name, Pageable pageable);
+	
+	
+	
+	
+	
+	
 
 }
+ 

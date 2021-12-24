@@ -1,8 +1,11 @@
 package com.j6d1.rest.controller;
 
+import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.websocket.server.PathParam;
 
@@ -11,6 +14,7 @@ import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,7 +34,8 @@ public class UploadRestController {
 	UploadService uploadService;
 
 	@GetMapping("/rest/upload/{folder}/{file}")
-	public ResponseEntity<ByteArrayResource> download(@PathVariable("folder") String folder, @PathVariable("file") String file) {
+	public ResponseEntity<ByteArrayResource> download(@PathVariable("folder") String folder, 
+			@PathVariable("file") String file) {
 		//
 		if (!file.equals("") || file != null) {
 			try {
@@ -60,5 +65,37 @@ public class UploadRestController {
 
 		return node;
 	}
+	
+	@DeleteMapping("/rest/upload/{folder}/{file}")
+	public void delete(@PathVariable("folder") String folder, @PathVariable("file") String filename) {
+		Path path = Paths.get(folder, filename);
+		path.toFile().delete();
+	}
+	
+	@GetMapping("/rest/upload/{folder}")
+	public List<String> list(@PathVariable("folder") String folder){
+		List<String> filenames = new ArrayList<>();
+		File path = Paths.get(folder).toFile();
+		if(path.exists()) {
+			File[] files = path.listFiles();
+			for (File file : files) {
+				filenames.add(file.getName());
+			}
+		}
+		
+		return filenames;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

@@ -33,6 +33,8 @@ public class AuthorityRestController {
 	@Autowired
 	AuthorityService authorityService;
 	
+	
+	
 	@GetMapping("/rest/authorities")
 	public Map<String, Object> getAuthorities(@RequestParam("admin") Optional<Boolean> admin){
 		Map<String, Object> data = new HashMap<>();
@@ -43,6 +45,8 @@ public class AuthorityRestController {
 		return data;
 	}
 	
+	
+	
 	@GetMapping("/rest/authoritiesAdmin")
 	public List<Authority> getAll(@RequestParam("admin") Optional<Boolean> admin){
 		if(admin.orElse(false)) {
@@ -52,10 +56,15 @@ public class AuthorityRestController {
 		return authorityService.findAll();
 	}
 	
+	
+	
+	
 	@PostMapping("/rest/authorities")
 	public Authority create(@RequestBody Authority authority) {
 		return authorityService.save(authority);
 	}
+	
+	
 	
 	@DeleteMapping("/rest/authorities/{id}")
 	public void delete(@PathVariable("id") Integer id) {

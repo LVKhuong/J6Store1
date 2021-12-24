@@ -24,6 +24,8 @@ public interface ProductService {
 
 	Page<Product> findAll(Pageable pageable);
 
+	Page<Product> search(String search, Pageable pageable);
+
 	
 
 }

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -40,13 +41,17 @@ public class ProductController {
 //	}
 
 	@RequestMapping({ "/product/page", "/product/page/{cID}"})
-	public String paginate(Model model, @PathParam("p") Optional<Integer> p, @PathVariable("cID") Optional<Integer> cID) {
-		Pageable pageable = PageRequest.of(p.orElse(0), 3);
+	public String paginate(Model model, @PathParam("p") Optional<Integer> p, 
+			@PathVariable("cID") Optional<Integer> cID, @PathParam("search") Optional<String> search) {		
+		//
+		Pageable pageable = PageRequest.of(p.orElse(0), 3, Sort.by(Sort.Direction.DESC, "price"));
 		Page<Product> page;
 		if (cID.isPresent()) {
 			page = productService.findByCategoryId(cID.get(), pageable);
+		} else if(search.isPresent()) {
+			page = productService.search(search.get(), pageable);
 		} else {
-			page = productService.findAll(pageable);
+			page = productService.findAll(pageable);	
 		}	
 		model.addAttribute("ITEMS_PAGE", page);
 		

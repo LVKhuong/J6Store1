@@ -22,5 +22,10 @@ app.config(function($routeProvider){
 		.when("/category", {
 			templateUrl: "/assets/admin/category/index.html",
 			controller: "category-ctrl"
+		})
+		
+		.when("/gallery", {
+			templateUrl: "/assets/admin/gallery/index.html",
+			controller: "gallery-ctrl"
 		});
 });

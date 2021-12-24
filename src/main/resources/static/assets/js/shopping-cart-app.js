@@ -17,6 +17,7 @@
  			}else{
  				$http.get(`/rest/products/${id}`).then(resp => {
  					resp.data.qty = 1;
+ 					
  					this.items.push(resp.data);
  					this.saveToLocalStorage();
  				})

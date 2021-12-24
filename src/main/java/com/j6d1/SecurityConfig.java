@@ -55,7 +55,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //			}
 //		});
 
-		// auth.userDetailsService(userService).passwordEncoder(getPasswordEncode());
+//		auth.userDetailsService(userService).passwordEncoder(getPasswordEncode());
 
 		auth.inMemoryAuthentication()
 			.withUser("user1").password(this.getPasswordEncode().encode("123")).roles("ADMIN")

@@ -56,4 +56,30 @@ public class ProductServiceImpl implements ProductService {
 
 	}
 
+	
+	@Override
+	public Page<Product> search(String search, Pageable pageable){
+		return dao.serachProduct(search, pageable);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

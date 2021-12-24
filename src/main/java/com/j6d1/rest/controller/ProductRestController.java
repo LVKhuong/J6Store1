@@ -2,7 +2,12 @@ package com.j6d1.rest.controller;
 
 import java.util.List;
 
+import javax.websocket.server.PathParam;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,32 +28,38 @@ public class ProductRestController {
 
 	@Autowired
 	ProductService productService;
-	
+
 	@GetMapping("{id}")
 	public Product getOne(@PathVariable("id") Integer id) {
 		return productService.findById(id).get();
 	}
-	
+
 	@GetMapping("")
 	public List<Product> getAll() {
 		return productService.findAll();
 	}
-	
-	
+
 	@PostMapping("")
 	public Product create(@RequestBody Product product) {
 		return productService.create(product);
 	}
-	
+
 	@PutMapping("{id}")
 	public Product update(@PathVariable("id") Integer id, @RequestBody Product product) {
 		return productService.update(product);
 	}
-	
+
 	@DeleteMapping("{id}")
 	public void delete(@PathVariable("id") Integer id) {
 		productService.delete(id);
 	}
+
+	@PostMapping("/search")
+	public ResponseEntity<Page<Product>> search(@PathParam("search") String search) {
+		return ResponseEntity.ok(productService.search("%" + search + "%", PageRequest.of(0, 2))) ;
+	}
+
+	
 	
 	
 	

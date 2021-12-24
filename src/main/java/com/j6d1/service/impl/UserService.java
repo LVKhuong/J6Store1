@@ -45,7 +45,7 @@ public class UserService implements UserDetailsService {
 
 	
 	public void loginFromOAuth2(OAuth2AuthenticationToken oauth2) {
-		String username = oauth2.getPrincipal().getAttribute("email");
+		String username = oauth2.getPrincipal().getAttribute("name");
 		String password = Long.toHexString(System.currentTimeMillis());
 		
 		UserDetails user = User.withUsername(username)
