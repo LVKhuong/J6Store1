@@ -1,0 +1,11 @@
+@charset "ISO-8859-1";
+
+.poly-item img{
+	height: 150px;
+	max-width: 95%;
+}
+
+
+.poly-item-detail img{
+	max-width: 80%;
+}

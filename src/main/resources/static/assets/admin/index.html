@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+<title>J6Store - Admin</title>
+</head>
+<body class="container" ng-app="admin-app">
+
+	<header class="row">
+		<h2 class="alert alert-success col-sm-12">WEBSITE ADMINISTRATION</h2>
+	</header>
+
+	<div class="row">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light col-sm-12">
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-link active" href="/product/page">Home</a>
+					<a class="nav-link" href="#!gallery">Gallery</a> 
+					<a class="nav-link" href="#!category">Categories</a>
+					<a class="nav-link" href="#!product">Products</a> 
+					<a class="nav-link" href="#!authorize">Authorizing</a> 
+					<a class="nav-link" href="/security/logoff">Sign Out</a>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<article>
+		<h1>ADMINISTRATOR</h1>
+		<div ng-view></div>
+	</article>
+
+	<footer class="bg-dark text-center text-white row" style="margin-top: 20px;">
+		<!-- Grid container -->
+		<div class="container p-4 pb-0">
+			<!-- Section: Social media -->
+			<section class="mb-4">
+				<!-- Facebook -->
+				<a class="btn btn-outline-light btn-floating m-1" href="#!"
+					role="button"><i class="fab fa-facebook-f"></i></a>
+
+				<!-- Twitter -->
+				<a class="btn btn-outline-light btn-floating m-1" href="#!"
+					role="button"><i class="fab fa-twitter"></i></a>
+
+				<!-- Google -->
+				<a class="btn btn-outline-light btn-floating m-1" href="#!"
+					role="button"><i class="fab fa-google"></i></a>
+
+				<!-- Instagram -->
+				<a class="btn btn-outline-light btn-floating m-1" href="#!"
+					role="button"><i class="fab fa-instagram"></i></a>
+
+				<!-- Linkedin -->
+				<a class="btn btn-outline-light btn-floating m-1" href="#!"
+					role="button"><i class="fab fa-linkedin-in"></i></a>
+
+				<!-- Github -->
+				<a class="btn btn-outline-light btn-floating m-1" href="#!"
+					role="button"><i class="fab fa-github"></i></a>
+			</section>
+			<!-- Section: Social media -->
+		</div>
+		<!-- Grid container -->
+
+		<!-- Copyright -->
+		<div class="text-center p-3"
+			style="background-color: rgba(0, 0, 0, 0.2);">
+			© 2020 Copyright: <a class="text-white"
+				href="https://mdbootstrap.com/">MDBootstrap.com</a>
+		</div>
+		<!-- Copyright -->
+	</footer>
+
+
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script 
+		src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous">
+	</script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous">
+	</script>
+	<script 
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous">
+	</script>
+	
+	<script type="text/javascript" src="/assets/admin/admin-app.js"></script>
+	<script type="text/javascript" src="/assets/admin/product/product-ctrl.js"></script>
+	<script type="text/javascript" src="/assets/admin/authority/authority-ctrl.js"></script>
+	<script type="text/javascript" src="/assets/admin/category/category-ctrl.js"></script>
+	<script type="text/javascript" src="/assets/admin/gallery/gallery-ctrl.js"></script>
+</body>
+</html>

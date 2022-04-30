@@ -1,0 +1,105 @@
+
+<div class="card col-sm-12" style="margin-top: 20px;">
+	<div class="card-header">CREATE PRODUCT</div>
+	<div class="card-body">
+		<div class="card">
+	<div class="card-header">FORM PRODUCT</div>
+	<div class="card-body">
+		<div class="row">
+			<div class="col-sm-4 text-center">
+				<label for="image">
+					<img style="max-width:100%; height:200px;">
+				</label>
+			</div>
+			<div class="col-sm-8">
+				<div class="row">
+					<div class="form-control col-sm-6">
+						<div>Name</div>
+						<input  class="form-control">
+					</div>
+					<div class="form-control col-sm-6">
+						<div>Price</div>
+						<input class="form-control">
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-control col-sm-6">
+						<div>Category</div>
+						<select  class="form-control">
+							<option>asd</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-control col-sm-6">
+						<div>Avaiable?</div>
+						<div class="form-control">
+							<lable class="radio-inline">
+								<input ng-value="true" name="avaiable" type="radio">Yes
+							</lable>
+							<lable class="radio-inline">
+								<input name="avaiable" type="radio">No
+							</lable>
+						</div>
+					</div>
+					<div class="form-control col-sm-6">
+						<div>Create Date</div>
+						<input type="date" class="form-control">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="card-footer text-center">
+		<button class="btn btn-primary">Create</button>
+		<button  class="btn btn-success">Update</button>
+		<button  class="btn btn-danger">Delete</button>
+		<button class="btn btn-info">Reset</button>
+	</div>
+</div>
+	</div>
+	<div class="card-header">PRODUCT INFORMATION</div>
+	<div class="card-body">
+		<div class="card">
+	<div class="card-header">PRODUCT LIST</div>
+	<table class="table table-condensed">
+		<thead class="bg-success" style="font-variant:small-caps;">
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Price</th>
+				<th>Date</th>
+				<th>Image</th>
+				<th>Category</th>
+				<th>Avaiable?</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+					<td>123</td>
+					<td>123</td>
+					<td>123</td>
+					<td>123</td>
+					<td>123</td>
+					<td>123</td>
+					<td>123</td>
+					<td>
+						<div class="btn-group btn-group-xs">
+							<button  class="btn btn-success">Edit</button>
+							<button class="btn btn-danger">Delete</button>
+						</div>
+					</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="card-footer text-center">
+	<button class="btn btn-primary">First</button>
+		<button class="btn btn-primary">Back</button>
+		<button class="btn btn-default">1 of 99</button>
+		<button  class="btn btn-danger">Next</button>
+		<button  class="btn btn-danger">Last</button>
+	</div>
+</div>
+	</div>
+</div>

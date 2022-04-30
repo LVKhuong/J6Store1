@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/layout/index::dynamic(~{::main})}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+    <main>
+    	<div th:replace="~{/cart/view::shopping-cart}"></div>
+        <div class="card" style="margin-top: 20px;">
+        	<div class="card-header">
+        		ORDER PURCHASING
+        	</div>
+        	<div class="card-body">
+        		<div class="row">
+        			<div class="form-control col-sm-6">
+        				<div>Purchaser:</div>
+        				<div class="form-control" id="username">[[${#request.remoteUser}]]</div>
+        			</div>
+        			<div class="form-control col-sm-6">
+        				<div>Order date:</div>
+        				<div class="form-control">{{order.createDate | date:'yyyy-MM-dd'}}</div>
+        			</div>
+        		</div>
+        		<div class="row">
+        			<div class="form-group col-sm-12">
+        				<div>Shipping address:</div>
+        				<textarea cols="100" rows="5" ng-model="order.address"></textarea>
+        			</div>
+        		</div>
+        	</div>
+        	<div class="card-footer">
+        		<div class="row">
+        			<div class="col-sm-6">
+        				<button style="max-width: 90%;" class="btn btn-success" 
+        					ng-click="order.purchase()">Purchse</button>
+        			</div>
+        			<div class="col-sm-6">
+        				<div id="paypal-button-container"></div>
+        			</div>	
+        		</div>      		
+        	</div>    	
+        </div>
+        
+	</main>
+    
+
+	
+	
+	
+</body>
+</html>

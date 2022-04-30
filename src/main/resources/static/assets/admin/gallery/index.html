@@ -1,0 +1,12 @@
+<div class="card">
+	<div class="card-header">Gallery</div>
+	<div class="card-body row">
+		<div class="col-sm-2" ng-repeat="item in filenames">
+			<img alt="No Image" ng-src="/rest/upload/images/{{item}}" 
+				style="width: 150px; height: 150px; margin-top: 10px;" ng-dblclick="delete(item)">
+		</div>
+	</div>
+	<div class="card-footer">
+		<h5>Click đúp để xóa ảnh !!!</h5>
+	</div>
+</div>
